@@ -3,3 +3,5 @@ Hello world
 /git add .
 
 /git commit -m "Patata"
+
+/git push origin main
