@@ -1,0 +1,25 @@
+1
+https://moodle.nigul.coop/ course/modedit.php?add=assign&type=&course=82&section=3&return=0&sr=0
+
+Protocolo + Nombre + Ruta + Archivo | Absoluto
+
+2
+github.com/marketplace?type=aplicaciones
+Nombre + Ruta | Relativo
+
+3
+https://www.meneame.net/story/primer-vuelo-avion-hidrogeno-mas-grande-mundo#comentario1
+Protocolo + Nombre + Ruta | Absoluto
+
+4
+https:// thispersondoesnotexist.com/ imagen
+Protocolo + Nombre + Ruta | Absoluto
+
+5
+sftp:// example.com
+Protocolo + Nombre | Absoluto
+
+6
+info/noticia.html?p=2
+Ruta + Archivo | Relativo
+
