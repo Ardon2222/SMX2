@@ -1,8 +1,8 @@
-/git add .
+git add .
 
-/git commit -m "Patata"
+git commit -m "Patata"
 
-/git push origin main
+git push origin main
 
 
 ------------
