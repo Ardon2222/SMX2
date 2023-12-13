@@ -151,11 +151,17 @@
                 $ordenres = "Alfabetico";
             } elseif ($orden == 'orden2') {
                 $ordenres = "Mayor a menor";
+                usort($rentacars, function ($a, $b) {
+                    return $b['numVehiculos'] - $a['numVehiculos'];
+                });
             } else {
                 $ordenres = "Menor a mayor";
+                usort($rentacars, function ($a, $b) {
+                    return $a['numVehiculos'] - $b['numVehiculos'];
+                });
             }
 
-            // Mostrar el total de vehículos
+            // Mostrar el total de vehículos y la tabla de resultados
             echo "<hr><h3>Filtrando por: </h3>";
             echo "<p>Municipio: $municipioSeleccionado </p>";
             echo "<p>Codigo Postal: $codigoPostalSeleccionado </p>";
@@ -166,27 +172,19 @@
             //<!-- Mostrar los resultados en una tabla -->
             echo "<h2>Resultados:</h2><hr>";
 
-            if ($orden === 'orden1') {
-                usort($rentacars, function ($a, $b) {
-                    return strcmp($a['denominacion'], $b['denominacion']);
-                });
+            echo "<table border='1'>";
+            echo "<tr><th>Denominación</th><th>Número de vehículos</th><th>Dirección</th><th>Explotador</th></tr>";
 
-                echo "<table border='1'>";
-                echo "<tr><th>Denominación</th><th>Número de vehículos</th><th>Dirección</th><th>Explotador</th></tr>";
-
-                foreach ($rentacars as $rentacar) {
-                    echo "<tr>";
-                    echo "<td>{$rentacar['denominacion']}</td>";
-                    echo "<td>{$rentacar['numVehiculos']}</td>";
-                    echo "<td>{$rentacar['direccion']}</td>";
-                    echo "<td>{$rentacar['explotador']}</td>";
-                    echo "</tr>";
-                }
-
-                echo "</table>";
+            foreach ($rentacars as $rentacar) {
+                echo "<tr>";
+                echo "<td>{$rentacar['denominacion']}</td>";
+                echo "<td>{$rentacar['numVehiculos']}</td>";
+                echo "<td>{$rentacar['direccion']}</td>";
+                echo "<td>{$rentacar['explotador']}</td>";
+                echo "</tr>";
             }
 
-            // Resto de la lógica para las otras opciones de ordenamiento...
+            echo "</table>";
         }
     }
     ?>
