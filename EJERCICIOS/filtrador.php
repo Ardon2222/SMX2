@@ -143,6 +143,10 @@
                 $codigoPostalSeleccionado = "NO FILTRADO";
             }
 
+            if ($nombreFiltro === '') {
+                $nombreFiltro = "NO FILTRADO";
+            }
+
             if ($orden == 'orden1') {
                 $ordenres = "Alfabetico";
             } elseif ($orden == 'orden2') {
