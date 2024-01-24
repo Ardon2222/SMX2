@@ -1,0 +1,23 @@
+-----------------------------COMANDOS-----------------------------
+
+SELECT
+
+-Indica que se seleccionarán datos de la base de datos.
+
+FROM
+
+-Indica la tabla desde la cual se seleccionarán los datos.
+
+titles.title    (Ejemplo)
+
+-Se refiere a la columna title de la tabla titles.
+
+AVG(salaries.salary) AS media_salarial
+
+-Calcula la media de la columna salary de la tabla salaries y la nombra como media_salarial. 
+
+CURRENT_TIMESTAMP
+
+-Devuelve el momento en elcual se ha ejecutado
+
+-----------------------------Ejercicios-----------------------------
