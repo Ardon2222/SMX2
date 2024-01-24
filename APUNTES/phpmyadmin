@@ -20,4 +20,21 @@ CURRENT_TIMESTAMP
 
 -Devuelve el momento en elcual se ha ejecutado
 
+INSERT
+
+-Inserta informacion
+
+INTO %tabla | INTO %tabla (%columna1, columna2)
+
+-Dice en que tabla ejecutar y tambien puede hacerlo en columnas concretas
+
+VALUES (%valor1, valor2)
+
+-Da un valor a donde hemos echo el INTO
+
+
 -----------------------------Ejercicios-----------------------------
+
+INSERT INTO language (name, last_update) VALUES ("Italian", CURRENT_TIMESTAMP);
+
+-En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italian" y el de la fecha en este momento
