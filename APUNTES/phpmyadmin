@@ -39,6 +39,8 @@ SELECT DISTINCT patata FROM verdura
 
 -----------------------------
 
+
+
 -----------------------------COMANDOS-----------------------------
 
 INSERT
@@ -58,6 +60,10 @@ VALUES (%valor1, valor2)
 INSERT INTO language (name, last_update) VALUES ("Italian", CURRENT_TIMESTAMP);
 
 -En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italian" y el de la fecha en este momento
+
+-----------------------------
+
+
 
 -----------------------------COMANDOS-----------------------------
 
