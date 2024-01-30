@@ -49,7 +49,8 @@ COUNT(columna)
 -Cuenta lo que se le ha indicado
 
 WHERE %columna = valor
-(Puede utilizarse =, <, >, <=, =>)
+(Puede utilizarse =, <, >, <=, => para valores numericos)
+(Puede utilizarse OR, AND y NOT para valores logicos)
 
 -Es un filtrador, solo pasa lo que cumpla con las condiciones
 
@@ -76,7 +77,6 @@ SELECT * FROM actores WHERE pais='Mexico';
 -----------------------------
 
 SELECT * FROM actores WHERE pais='Mexico' OR ciudad 'Argentina';
-(Aparte de OR se puede usar AND y NOT)
 
 //Otra manera de hacerlo es
 
@@ -89,7 +89,13 @@ SELECT * FROM actores WHERE pais IN ('Mexico', 'Argentina');
 
 SELECT * FROM actores WHERE pais='España' AND ciudad='Madrid' ;
 
--Selecciona todas las filas que su valor de la columna "pais" sea "Mexico" y su valor de la columna "ciudad" sea "Madrid"
+-Selecciona todas las filas que su valor de la columna "pais" sea "España" y su valor de la columna "ciudad" sea "Madrid"
+
+-----------------------------
+
+SELECT * FROM actores WHERE NOT pais='España' AND NOT pais='Mexico';
+
+-Selecciona todas las filas que su valor de la columna "pais" no sea "España" ni "Mexico"
 
 -----------------------------COMANDOS-----------------------------
 
