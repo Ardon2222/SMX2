@@ -8,17 +8,19 @@ FROM
 
 -Indica la tabla desde la cual se seleccionarán los datos.
 
-titles.title    (Ejemplo)
+-----------------------------EJERCICIOS-----------------------------
 
--Se refiere a la columna title de la tabla titles.
+SELECT patata FROM verdura
 
-AVG(salaries.salary) AS media_salarial
+-Selecciona la lista "patata" de la tabla "verdura"
 
--Calcula la media de la columna salary de la tabla salaries y la nombra como media_salarial. 
+-----------------------------
 
-CURRENT_TIMESTAMP
+SELECT * FROM verdura
 
--Devuelve el momento en elcual se ha ejecutado
+-Selecciona todo lo que hay en la tabla "verdura"
+
+-----------------------------COMANDOS-----------------------------
 
 INSERT
 
@@ -32,6 +34,26 @@ VALUES (%valor1, valor2)
 
 -Da un valor a donde hemos echo el INTO
 
+-----------------------------EJERCICIOS-----------------------------
+
+INSERT INTO language (name, last_update) VALUES ("Italian", CURRENT_TIMESTAMP);
+
+-En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italian" y el de la fecha en este momento
+
+-----------------------------COMANDOS-----------------------------
+
+titles.title    (Ejemplo)
+
+-Se refiere a la columna title de la tabla titles.
+
+AVG(salaries.salary) AS media_salarial
+
+-Calcula la media de la columna salary de la tabla salaries y la nombra como media_salarial. 
+
+CURRENT_TIMESTAMP
+
+-Devuelve el momento en elcual se ha ejecutado
+
 COUNT(%columna)
 
 -Cuenta lo que se le ha indicado
@@ -41,12 +63,4 @@ JOIN
 -Sirve para unir tablas
 
 
------------------------------Ejercicios-----------------------------
 
-INSERT INTO language (name, last_update) VALUES ("Italian", CURRENT_TIMESTAMP);
-
--En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italian" y el de la fecha en este momento
-
-
-
--Sale el numero depeliculas poridioma
