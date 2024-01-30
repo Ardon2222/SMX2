@@ -8,6 +8,10 @@ FROM
 
 -Indica la tabla desde la cual se seleccionarán los datos.
 
+DISTINCT
+
+-Se usa para asegurarse de que un valor no se repita
+
 -----------------------------EJERCICIOS-----------------------------
 
 SELECT patata FROM verdura
@@ -25,6 +29,15 @@ SELECT patata, cebolla FROM verdura
 SELECT * FROM verdura
 
 -Selecciona todo lo que hay en la tabla "verdura"
+
+-----------------------------
+
+SELECT DISTINCT patata FROM verdura
+
+-Selecciona todas las patatas DIFERENTES de la lista "patata" de la tabla "verdura" 
+(Si no fuera por el DISTINCT las seleccionaria todas ya sea se repitan o no)
+
+-----------------------------
 
 -----------------------------COMANDOS-----------------------------
 
