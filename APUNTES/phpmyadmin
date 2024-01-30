@@ -16,6 +16,12 @@ SELECT patata FROM verdura
 
 -----------------------------
 
+SELECT patata, cebolla FROM verdura
+
+-Selecciona las listas "patata" y "cebolla" de la tabla "verdura"
+
+-----------------------------
+
 SELECT * FROM verdura
 
 -Selecciona todo lo que hay en la tabla "verdura"
