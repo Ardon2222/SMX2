@@ -39,9 +39,9 @@ SELECT DISTINCT patata FROM verdura
 (Si no fuera por el DISTINCT las seleccionaria todas ya sea se repitan o no)
 
 -----------------------------
-
-
-
+------------------
+----------
+------------------
 -----------------------------COMANDOS-----------------------------
 
 COUNT(columna)
@@ -97,6 +97,25 @@ SELECT * FROM actores WHERE NOT pais='España' AND NOT pais='Mexico';
 
 -Selecciona todas las filas que su valor de la columna "pais" no sea "España" ni "Mexico"
 
+-----------------------------
+------------------
+----------
+------------------
+-----------------------------COMANDOS-----------------------------
+
+
+
+
+-----------------------------EJERCICIOS-----------------------------
+
+
+
+
+
+-----------------------------
+------------------
+----------
+------------------
 -----------------------------COMANDOS-----------------------------
 
 INSERT
