@@ -2,7 +2,8 @@
 
 SELECT
 
--Indica que se seleccionarán datos de la base de datos.
+-Muestra la columna de la cual se seleccionaran los datos.
+(Se utiliza junto al FROM)
 
 FROM
 
@@ -16,30 +17,79 @@ DISTINCT
 
 SELECT patata FROM verdura
 
--Selecciona la lista "patata" de la tabla "verdura"
+-Mostrara la columna "patata" de la tabla "verdura"
 
 -----------------------------
 
 SELECT patata, cebolla FROM verdura
 
--Selecciona las listas "patata" y "cebolla" de la tabla "verdura"
+-Mostrara las columnas "patata" y "cebolla" de la tabla "verdura"
 
 -----------------------------
 
 SELECT * FROM verdura
 
--Selecciona todo lo que hay en la tabla "verdura"
+-Mostrara todo lo que hay en la tabla "verdura"
 
 -----------------------------
 
 SELECT DISTINCT patata FROM verdura
 
--Selecciona todas las patatas DIFERENTES de la lista "patata" de la tabla "verdura" 
+-Mostrara todas las patatas DIFERENTES de la columna "patata" de la tabla "verdura" 
 (Si no fuera por el DISTINCT las seleccionaria todas ya sea se repitan o no)
 
 -----------------------------
 
 
+
+-----------------------------COMANDOS-----------------------------
+
+COUNT(columna)
+
+-Cuenta lo que se le ha indicado
+
+WHERE %columna = valor
+(Puede utilizarse =, <, >, <=, =>)
+
+-Es un filtrador, solo pasa lo que cumpla con las condiciones
+
+-----------------------------EJERCICIOS-----------------------------
+
+SELECT COUNT(ciudad) FROM actor
+
+-Mostrara la cantidad de ciudades que hay en la tabla "actor"
+(Por logica sera igual a la cantidad de actores)
+
+-----------------------------
+
+SELECT COUNT(DISTINCT ciudad) FROM actor
+
+-Mostrara la cantidad de ciudades unicas hay en la tabla "actor"
+(No se repetiran las ciudades)
+
+-----------------------------
+
+SELECT * FROM actores WHERE pais='Mexico';
+
+-Selecciona todas las filas que su valor de la columna "pais" sea "Mexico"
+
+-----------------------------
+
+SELECT * FROM actores WHERE pais='Mexico' OR ciudad 'Argentina';
+(Aparte de OR se puede usar AND y NOT)
+
+//Otra manera de hacerlo es
+
+SELECT * FROM actores WHERE pais IN ('Mexico', 'Argentina');
+(El IN es otra forma de hacer el OR)
+
+-Selecciona todas las filas que su valor de la columna "pais" sea "Mexico" o "Argentina"
+
+-----------------------------
+
+SELECT * FROM actores WHERE pais='España' AND ciudad='Madrid' ;
+
+-Selecciona todas las filas que su valor de la columna "pais" sea "Mexico" y su valor de la columna "ciudad" sea "Madrid"
 
 -----------------------------COMANDOS-----------------------------
 
@@ -78,10 +128,6 @@ AVG(salaries.salary) AS media_salarial
 CURRENT_TIMESTAMP
 
 -Devuelve el momento en elcual se ha ejecutado
-
-COUNT(%columna)
-
--Cuenta lo que se le ha indicado
 
 JOIN
 
