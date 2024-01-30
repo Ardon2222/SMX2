@@ -15,25 +15,25 @@ DISTINCT
 
 -----------------------------EJERCICIOS-----------------------------
 
-SELECT patata FROM verdura
+SELECT patata FROM verdura;
 
 -Mostrara la columna "patata" de la tabla "verdura"
 
 -----------------------------
 
-SELECT patata, cebolla FROM verdura
+SELECT patata, cebolla FROM verdura;
 
 -Mostrara las columnas "patata" y "cebolla" de la tabla "verdura"
 
 -----------------------------
 
-SELECT * FROM verdura
+SELECT * FROM verdura;
 
 -Mostrara todo lo que hay en la tabla "verdura"
 
 -----------------------------
 
-SELECT DISTINCT patata FROM verdura
+SELECT DISTINCT patata FROM verdura;
 
 -Mostrara todas las patatas DIFERENTES de la columna "patata" de la tabla "verdura" 
 (Si no fuera por el DISTINCT las seleccionaria todas ya sea se repitan o no)
@@ -56,14 +56,14 @@ WHERE %columna = valor
 
 -----------------------------EJERCICIOS-----------------------------
 
-SELECT COUNT(ciudad) FROM actor
+SELECT COUNT(ciudad) FROM actor;
 
 -Mostrara la cantidad de ciudades que hay en la tabla "actor"
 (Por logica sera igual a la cantidad de actores)
 
 -----------------------------
 
-SELECT COUNT(DISTINCT ciudad) FROM actor
+SELECT COUNT(DISTINCT ciudad) FROM actor;
 
 -Mostrara la cantidad de ciudades unicas hay en la tabla "actor"
 (No se repetiran las ciudades)
@@ -72,7 +72,7 @@ SELECT COUNT(DISTINCT ciudad) FROM actor
 
 SELECT * FROM actores WHERE pais='Mexico';
 
--Selecciona todas las filas que su valor de la columna "pais" sea "Mexico"
+-Mostrara todas las filas que su valor de la columna "pais" sea "Mexico"
 
 -----------------------------
 
@@ -83,19 +83,19 @@ SELECT * FROM actores WHERE pais='Mexico' OR ciudad 'Argentina';
 SELECT * FROM actores WHERE pais IN ('Mexico', 'Argentina');
 (El IN es otra forma de hacer el OR)
 
--Selecciona todas las filas que su valor de la columna "pais" sea "Mexico" o "Argentina"
+-Mostrara todas las filas que su valor de la columna "pais" sea "Mexico" o "Argentina"
 
 -----------------------------
 
 SELECT * FROM actores WHERE pais='España' AND ciudad='Madrid' ;
 
--Selecciona todas las filas que su valor de la columna "pais" sea "España" y su valor de la columna "ciudad" sea "Madrid"
+-Mostrara todas las filas que su valor de la columna "pais" sea "España" y su valor de la columna "ciudad" sea "Madrid"
 
 -----------------------------
 
 SELECT * FROM actores WHERE NOT pais='España' AND NOT pais='Mexico';
 
--Selecciona todas las filas que su valor de la columna "pais" no sea "España" ni "Mexico"
+-Mostrara todas las filas que su valor de la columna "pais" no sea "España" ni "Mexico"
 
 -----------------------------
 ------------------
@@ -103,28 +103,13 @@ SELECT * FROM actores WHERE NOT pais='España' AND NOT pais='Mexico';
 ------------------
 -----------------------------COMANDOS-----------------------------
 
+ORDER BY %columna
 
+-Hace que el resultado se muestre ordenado por la columna seleccionada
 
+INSERT INTO %tabla | INTO %tabla (%columna1, columna2)
 
------------------------------EJERCICIOS-----------------------------
-
-
-
-
-
------------------------------
-------------------
-----------
-------------------
------------------------------COMANDOS-----------------------------
-
-INSERT
-
--Inserta informacion
-
-INTO %tabla | INTO %tabla (%columna1, columna2)
-
--Dice en que tabla ejecutar y tambien puede hacerlo en columnas concretas
+-Inserta informacion en una tabla o columnas concretas de esta
 
 VALUES (%valor1, valor2)
 
@@ -132,27 +117,63 @@ VALUES (%valor1, valor2)
 
 -----------------------------EJERCICIOS-----------------------------
 
-INSERT INTO language (name, last_update) VALUES ("Italian", CURRENT_TIMESTAMP);
+SELECT * FROM trabajadores ORDER BY pais, ciudad;
+(Las columnas como por ejemplo "pais" suelen estar ordenadas alfabeticamente)
 
--En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italian" y el de la fecha en este momento
+-Mostrara todo de la tabla "trabajadores" ordenado por pais y si tienen el mismo pais se ordenara por ciudad
 
 -----------------------------
 
+SELECT * FROM trabajadores ORDER BY pais ASC, ciudad DESC;
+(Si no pones ASC ni DESC se mostrara como ASC predeterminadamente)
 
+-Mostrara todo de la tabla "trabajadores" ordenado por pais de manera ascendente y si tienen el mismo pais se ordenara por ciudad de manera descendente
+
+-----------------------------
+
+INSERT INTO language (name, last_update) VALUES ("Italiano", CURRENT_TIMESTAMP);
+(CURRENT_TIMESTAMP sirve para poner la fecha del momento en que se ejecuta)
+
+-En las columnas "name" y "last_update" de la tabla "language" inserta el valor "Italiano" y el de la fecha en este momento
+
+-----------------------------
+------------------
+----------
+------------------
+-----------------------------COMANDOS-----------------------------
+
+DELETE
+
+-Elimina la informacion dicha
+
+LIMIT %cantidad
+
+-Pone un limite a la cantidad de filas mostradas
+
+-----------------------------EJERCICIOS-----------------------------
+
+DELETE FROM Trabajadores WHERE NombreTrabajador='Alfreds Futterkiste';
+
+-Elimina el trabajador "Alfreds Futterkiste" de la columna "NombreTrabajador" de la tabla Trabajadores
+
+-----------------------------
+
+DELETE FROM Trabajadores;
+
+-Elimina la tabla Trabajadores
+
+-----------------------------
+
+SELECT * FROM trabajadores ORDER BY pais ASC, ciudad DESC LIMIT 3;
+
+-Mostrara todo de la tabla "trabajadores" ordenado por pais y si tienen el mismo pais se ordenara por ciudad pero eso solo mostrando 3 como maximo
 
 -----------------------------COMANDOS-----------------------------
 
-titles.title    (Ejemplo)
-
--Se refiere a la columna title de la tabla titles.
 
 AVG(salaries.salary) AS media_salarial
 
 -Calcula la media de la columna salary de la tabla salaries y la nombra como media_salarial. 
-
-CURRENT_TIMESTAMP
-
--Devuelve el momento en elcual se ha ejecutado
 
 JOIN
 
