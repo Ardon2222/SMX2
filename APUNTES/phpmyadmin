@@ -227,7 +227,11 @@ SELECT * FROM Productos WHERE Precio BETWEEN 10 AND 20 AND PrdocutoID NOT IN (1,
 
 JOIN
 
--Junta dos tablas mediante un valor comun para asi poder trabajar con mas de una tabla
+-Invita tablas mediante un valor comun para asi poder trabajar con mas de una tabla
+
+UNION
+
+-Une dos columnas
 
 -----------------------------EJERCICIOS-----------------------------
 
@@ -238,3 +242,9 @@ INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
 (Como vemos quiere mostrar elementos de 2 tablas difererntes (Orders y Customers) lo cual no es posible 
 pero lo hace posible con el Join juntando las tablas Orders y Customers atraves de las 
 columnas CustomerID de Orders y CustomerID de Customers, puede hacer esto ya que los valores de esas tablas son iguales)
+
+-----------------------------
+
+SELECT City FROM Customers UNION SELECT City FROM Suppliers ORDER BY City;
+
+-Muestra todas las ciudades de las tablas "Customers" y Suppliers en una misma columna y lo ordena alfabeticamente por las ciudades de las dos tablas
