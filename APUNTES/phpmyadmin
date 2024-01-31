@@ -44,7 +44,7 @@ SELECT DISTINCT patata FROM verdura;
 ------------------
 -----------------------------COMANDOS-----------------------------
 
-COUNT(columna)
+COUNT(%columna)
 
 -Cuenta lo que se le ha indicado
 
@@ -150,6 +150,15 @@ LIMIT %cantidad
 
 -Pone un limite a la cantidad de filas mostradas
 
+MIN() | MAX()
+(Funcionan en columnas con valores numericos)
+
+-Funcionan junto a SELECT mostrando el valor minimo o maximo
+
+AS
+
+-Renombra el resultado
+
 -----------------------------EJERCICIOS-----------------------------
 
 DELETE FROM Trabajadores WHERE NombreTrabajador='Alfreds Futterkiste';
@@ -168,16 +177,44 @@ SELECT * FROM trabajadores ORDER BY pais ASC, ciudad DESC LIMIT 3;
 
 -Mostrara todo de la tabla "trabajadores" ordenado por pais y si tienen el mismo pais se ordenara por ciudad pero eso solo mostrando 3 como maximo
 
+-----------------------------
+
+SELECT MIN(precio) AS PrecioBarato FROM Productos;
+
+-Muestra el precio mas barato de la tabla "Productos" y renombra el retultado como "PrecioBarato"
+
+-----------------------------
+------------------
+----------
+------------------
 -----------------------------COMANDOS-----------------------------
 
+AVG(%columna)
 
-AVG(salaries.salary) AS media_salarial
+-Calcula la media de la columna
 
--Calcula la media de la columna salary de la tabla salaries y la nombra como media_salarial. 
+SUM(%columna)
 
-JOIN
+-Suma todos los valores de esa columna
 
--Sirve para unir tablas
+LIKE
 
+-Ayuda a filtrar 
 
+-----------------------------EJERCICIOS-----------------------------
 
+SELECT AVG(Precio) FROM Productos;
+
+-Muestra la media de la columna "Precio" de la tabla "Productos"
+
+-----------------------------
+
+SELECT * FROM Trabajadores WHERE NombreTrabajador LIKE 'a__%';
+
+-Muestra todo de la tabla trabajadores que en su columna "NombreTrabajador" empiece por "a" y tenga 2 caracteres mas
+
+-----------------------------
+
+SELECT * FROM Productos WHERE Precio BETWEEN 10 AND 20 AND PrdocutoID NOT IN (1,2,3);
+
+-Muestra todos los productos con un precio entre 10 y 20 que el valor de su columna ProductoID no sea ni 1 ni 2 ni 3
