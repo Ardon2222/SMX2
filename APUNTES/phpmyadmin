@@ -218,3 +218,23 @@ SELECT * FROM Trabajadores WHERE NombreTrabajador LIKE 'a__%';
 SELECT * FROM Productos WHERE Precio BETWEEN 10 AND 20 AND PrdocutoID NOT IN (1,2,3);
 
 -Muestra todos los productos con un precio entre 10 y 20 que el valor de su columna ProductoID no sea ni 1 ni 2 ni 3
+
+-----------------------------
+------------------
+----------
+------------------
+-----------------------------COMANDOS-----------------------------
+
+JOIN
+
+-Junta dos tablas mediante un valor comun para asi poder trabajar con mas de una tabla
+
+-----------------------------EJERCICIOS-----------------------------
+
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate FROM Orders 
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+-Muestra las columnas OrderID de la tabla Orders, CustomerName de la tabla Customers y OrderDate de la tabla Orders
+(Como vemos quiere mostrar elementos de 2 tablas difererntes (Orders y Customers) lo cual no es posible 
+pero lo hace posible con el Join juntando las tablas Orders y Customers atraves de las 
+columnas CustomerID de Orders y CustomerID de Customers, puede hacer esto ya que los valores de esas tablas son iguales)
